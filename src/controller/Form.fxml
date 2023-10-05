@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+
+<GridPane fx:id="formTable" hgap="20.0" maxWidth="-Infinity" prefHeight="283.0" prefWidth="767.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FormController">
+   <columnConstraints>
+      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="241.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="62.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.0" minWidth="10.0" prefWidth="339.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
+         <children>
+            <Button id="clearBtn" fx:id="clearBtn" mnemonicParsing="false" onMouseClicked="#scale" text="%clearBtn">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <image>
+                        <Image url="@img/reload.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="insertBtn" fx:id="insertBtn" mnemonicParsing="false" onAction="#insertStudent" onMouseClicked="#scale" text="%insertBtn">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/save.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="deleteBtn" fx:id="deleteBtn" disable="true" mnemonicParsing="false" onAction="#deleteStudent" onMouseClicked="#scale" text="%deleteBtn">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/cross.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </HBox>
+      <Label text="%id" />
+      <TextField fx:id="idField" alignment="TOP_LEFT" maxWidth="-Infinity" prefWidth="160.0" promptText="%idPrompt" GridPane.columnIndex="1" GridPane.hgrow="NEVER" />
+      <Label text="%mail" GridPane.columnIndex="2" />
+      <TextField fx:id="emailField" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="250.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" />
+      <TextField fx:id="lastNameField" alignment="TOP_LEFT" maxWidth="-Infinity" prefWidth="300.0" promptText="%lNamePrompt" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" />
+      <TextField fx:id="firstNameField" alignment="TOP_LEFT" maxWidth="-Infinity" prefWidth="300.0" promptText="%fNamePrompt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <DatePicker fx:id="birthDatePicker" maxHeight="-Infinity" prefHeight="31.0" prefWidth="300.0" promptText="dd-mm-yyyy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="%lName" GridPane.rowIndex="1" />
+      <Label text="%fName" GridPane.rowIndex="2" />
+      <Label text="%dob" GridPane.rowIndex="3" />
+      <Label text="%faculty" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Label text="%class" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Label text="%gender" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <StackPane GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <children>
+            <ChoiceBox fx:id="classCb" prefHeight="31.0" prefWidth="250.0" StackPane.alignment="CENTER_LEFT" />
+            <Text fx:id="classChoicePrompt" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="%classPrompt" StackPane.alignment="CENTER_LEFT">
+               <StackPane.margin>
+                  <Insets left="10.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <children>
+            <RadioButton fx:id="male" mnemonicParsing="false" text="Male">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="genderToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="female" mnemonicParsing="false" text="Female" toggleGroup="$genderToggleGroup">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </RadioButton>
+         </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </HBox>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <children>
+            <ChoiceBox fx:id="facultyCb" prefWidth="250.0" StackPane.alignment="CENTER_LEFT" />
+            <Text fx:id="facultyChoicePrompt" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="%facultyPrompt" StackPane.alignment="CENTER_LEFT">
+               <StackPane.margin>
+                  <Insets left="10.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</GridPane>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" stylesheets="@search.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchController">
+   <top>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextFlow>
+               <children>
+                  <Text id="h1" strokeType="OUTSIDE" strokeWidth="0.0" text="%searchTitle" />
+               </children>
+            </TextFlow>
+            <HBox prefWidth="200.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="searchField" onKeyPressed="#triggerSearching" prefHeight="37.0" prefWidth="240.0" promptText="%searchFieldPrompt" />
+                  <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#search" text="%searchBtn">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/magnifying-glass.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TextFlow prefWidth="200.0">
+               <children>
+                  <Text fx:id="resultNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%resultLabel" translateX="8.0" />
+               </children>
+            </TextFlow>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="resultTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="%id" />
+                <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="%lName" />
+                  <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="%fName" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <bottom>
+      <GridPane hgap="10.0" vgap="5.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="170.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.0" minWidth="10.0" prefWidth="410.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextFlow prefWidth="200.0" textAlignment="CENTER" GridPane.columnSpan="2">
+               <children>
+                  <Text id="h2" strokeType="OUTSIDE" strokeWidth="0.0" text="%detailLabel" />
+               </children>
+            </TextFlow>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%id" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%lName" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%fName" GridPane.rowIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%dob" GridPane.rowIndex="4" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%faculty" GridPane.rowIndex="5" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%class" GridPane.rowIndex="6" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%gender" GridPane.rowIndex="7" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%mail" GridPane.rowIndex="8" />
+            <TextFlow prefWidth="405.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Text fx:id="lastName" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Text fx:id="firstName" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Text fx:id="dateOfBirth" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Text fx:id="faculty" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Text fx:id="stdClass" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <Text fx:id="gender" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="textflow" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <children>
+                  <Text fx:id="email" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </TextFlow>
+         </children>
+      </GridPane>
+   </bottom>
+</BorderPane>

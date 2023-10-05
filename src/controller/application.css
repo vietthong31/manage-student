@@ -1,0 +1,65 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+* {
+	-fx-font-size: 16px;
+}
+
+BorderPane {
+	-fx-background-color: white;
+}
+
+#title {
+	-fx-font-size: 24px;
+	-fx-fill: #857c44;
+}
+
+/* Button */
+.button {
+	-fx-background-color: #DAD5AB;
+	-fx-padding: 7px 15px 7px 15px;
+}
+
+.button:hover {
+	-fx-background-color: #C3BA85;
+}
+
+/*TextField */
+.text-input:error {
+	-fx-text-fill: white;
+	-fx-background-color: derive(red, 99%);
+	-fx-border-width: 1px;
+	-fx-border-color: red;
+	-fx-border-style: hidden hidden solid hidden;
+}
+
+/*TableView */
+.column-header {
+	-fx-background-color: #DAD5AB;
+	-fx-border-color: black;
+	-fx-border-width: 0 1px 0 0px;
+}
+
+.table-row-cell:hover {
+	-fx-cursor: hand;
+}
+
+.table-row-cell:selected {
+	-fx-text-background-color: chocolate;
+}
+
+
+.table-row-cell:odd {
+	-fx-background-color: #F0F0CB;
+}
+
+.table-row-cell:even {
+	-fx-background-color: #FEFFE2;
+}
+
+.radio-button:selected {
+	-fx-font-weight: bold;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
